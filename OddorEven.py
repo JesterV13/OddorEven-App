@@ -2,14 +2,26 @@
 def OddorEven(num):
     if int(num % 2 == 0):
         print("The number", num, "is Even!")
-        # added math check for odd
+        # math check for odd
     elif int(num % 2 == 1):
         print("The number", num, "is Odd!")
 
 
-print("Enter a number:")
-# added check for string
-try:
-    OddorEven(int(input()))
-except ValueError:
-    print("Enter a number only!")
+# added greeting to app
+print("Welcome to the ODD or EVEN app")
+print("Please Enter a Number:")
+
+# added a while loop to run the program until user ended
+i = 1
+while i == 1:
+    # check for string
+    try:
+        OddorEven(int(input()))
+
+        # user input to end program
+        user_input = input("Would you like to exit the program? (y/n): ")
+        if user_input.lower() == "y":
+            i = i - 1
+
+    except ValueError:
+        print("Enter a number only!")
